@@ -16,7 +16,7 @@ def versionPatch = 2
 
 android {
   compileSdkVersion 23
-  buildToolsVersion "23.0.1"
+  buildToolsVersion "23.0.0"
 
   defaultConfig {
     applicationId "org.mmaug.mae"
@@ -27,52 +27,52 @@ android {
     renderscriptTargetApi 23
     renderscriptSupportModeEnabled true
 
-    buildConfigField "String", "API_KEY", MAE_KEY
-    buildConfigField "String", "API_SECRET", MAE_SECRET
+//    buildConfigField "String", "API_KEY", MAE_KEY
+//    buildConfigField "String", "API_SECRET", MAE_SECRET
   }
 
-  signingConfigs {
-    debug {
-      storeFile file('mae.jks')
-      storePassword MAE_PASSWORD
-      keyAlias MAE_NAME
-      keyPassword MAE_PASSWORD
-    }
-    beta {
-      storeFile file('mae.jks')
-      storePassword MAE_PASSWORD
-      keyAlias MAE_NAME
-      keyPassword MAE_PASSWORD
-    }
-    release {
-      storeFile file('mae.jks')
-      storePassword MAE_PASSWORD
-      keyAlias MAE_NAME
-      keyPassword MAE_PASSWORD
-    }
-  }
+//  signingConfigs {
+//    debug {
+//      storeFile file('mae.jks')
+//      storePassword MAE_PASSWORD
+//      keyAlias MAE_NAME
+//      keyPassword MAE_PASSWORD
+//    }
+//    beta {
+//      storeFile file('mae.jks')
+//      storePassword MAE_PASSWORD
+//      keyAlias MAE_NAME
+//      keyPassword MAE_PASSWORD
+//    }
+//    release {
+//      storeFile file('mae.jks')
+//      storePassword MAE_PASSWORD
+//      keyAlias MAE_NAME
+//      keyPassword MAE_PASSWORD
+//    }
+//  }
 
   buildTypes {
     release {
       minifyEnabled true
       shrinkResources true
-      signingConfig signingConfigs.release
+//      signingConfig signingConfigs.release
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-      resValue "string", "google_maps_api_key", GOOGLE_MAPS_API_KEY_RELEASE
+//      resValue "string", "google_maps_api_key", GOOGLE_MAPS_API_KEY_RELEASE
     }
     debug {
       debuggable true
       applicationIdSuffix '.debug'
       versionNameSuffix ' - DEBUG'
-      resValue "string", "google_maps_api_key", GOOGLE_MAPS_API_KEY_DEBUG
+      resValue "string", "google_maps_api_key", "AIzaSyCUjHCr_RjXDMqNIJT7PRslM_cnemcMvmA"
     }
-    beta {
-      signingConfig signingConfigs.beta
-      debuggable true
-      applicationIdSuffix '.beta'
-      versionNameSuffix ' - BETA'
-      resValue "string", "google_maps_api_key", GOOGLE_MAPS_API_KEY_BETA
-    }
+//    beta {
+//      signingConfig signingConfigs.beta
+//      debuggable true
+//      applicationIdSuffix '.beta'
+//      versionNameSuffix ' - BETA'
+//      resValue "string", "google_maps_api_key", GOOGLE_MAPS_API_KEY_BETA
+//    }
   }
 }
 
